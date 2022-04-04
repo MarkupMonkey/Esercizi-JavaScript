@@ -15,6 +15,17 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
+let nick = [];
+function nicknameMap(persons) {
+
+  for (let i = 0; i < persons.length; i++) {
+    nick.push(`${persons[i].name}${String(persons[i].age)}`);
+    
+  }
+  return(nick)
+}
+nicknameMap(persons)
+
 const nicknames = nicknameMap(persons);
 console.log(persons);
 console.log(nicknames);
