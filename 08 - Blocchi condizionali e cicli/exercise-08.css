@@ -10,33 +10,28 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     background-color: rgb(19, 4, 32);
     height: 100vh;
 }
-.title{
-    color: yellowgreen;
-    font-size: xx-large;
+div{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
 }
-.links{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1rem;
-    padding: 2rem;
-    border: 2rem solid rgba(153, 205, 50, 0.623);
-    border-radius: 5rem;
-}
+.buttonHome,.buttonBack,.buttonNext{width: 50rem; height: 10rem; }
+
+.buttonBack{border-radius: 150rem 100rem  80rem 10rem ;}
+.buttonNext{border-radius: 100rem 150rem  10rem 80rem;}
 a{
     text-decoration: none;
     color: #00ff0063;
+    font-size: 8rem
 }
-
 button{
     background-color: rgba(19, 4, 32, 0.438);
     font-size: 2rem;
-    color:#00ff0093;
     border-radius: 5rem;
-    /* border:5px solid rgb(0, 0, 0) */
     border:5px solid #00ff0073;
     width: 40rem;
     height: 5rem;
@@ -45,7 +40,6 @@ button{
 }
 
 button:hover{
-    color: #00ff00;
     background-color: #00ff0073;
     transition: 0.5s;
     box-shadow: 5px 1px 5px 1px #00ff00;
