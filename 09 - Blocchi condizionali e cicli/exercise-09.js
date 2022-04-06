@@ -1,5 +1,5 @@
 function getKeys(obj) {
-    for (let keys in person )
+    for (let keys in person)
 console.log(keys);
 }
 
