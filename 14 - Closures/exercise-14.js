@@ -1,6 +1,10 @@
-function greet(greeting) {
-  // ...
-}
+// function greet(greeting) {
+//   return function personName(nome){
+//     return greeting + nome
+//   }
+// }
+const greet = greeting => personName = name => greeting + name
+
 
 const greetWithHello = greet('Hello');
 const greetWithBye = greet('Bye');
