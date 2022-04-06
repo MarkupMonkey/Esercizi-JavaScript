@@ -4,12 +4,12 @@ html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-  
 }
 
 body{
     display: flex;
     flex-direction: column;
+    /* justify-content:center ; */
     align-items: center;
     background-color: rgb(19, 4, 32);
     height: 100vh;
@@ -49,4 +49,32 @@ button:hover{
     background-color: #00ff0073;
     transition: 0.5s;
     box-shadow: 5px 1px 5px 1px #00ff00;
+}
+
+@media (max-width: 390px){
+    html{
+        font-size: 8px;
+    }
+    .links{
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: 1rem;
+        padding: 2rem;
+        border: 2rem solid rgba(153, 205, 50, 0.623);
+        border-radius: 5rem;
+    }
+}
+
+@media (max-width: 1280px){
+    html{
+        font-size: 10px;
+    }
+    .links{
+        grid-template-columns: repeat(2,1fr);
+        display: grid;
+        gap: 1rem;
+        padding: 2rem;
+        border: 2rem solid rgba(153, 205, 50, 0.623);
+        border-radius: 5rem;
+    }
 }

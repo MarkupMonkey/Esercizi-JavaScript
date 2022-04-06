@@ -6,7 +6,12 @@ html{
     flex-direction: column;
   
 }
+h1{
+    align-self: center;
+    font-size: 5rem;
+    color: #00ff00;
 
+}
 body{
     display: flex;
     flex-direction: column;
