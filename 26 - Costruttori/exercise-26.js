@@ -2,7 +2,7 @@ function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.fullName = function () {
-    return this.firstName + "  " + this.lastName;
+    return this.firstName + ' ' + this.lastName;
   }; 
 }
 const john = new Person('John', 'Doe');
