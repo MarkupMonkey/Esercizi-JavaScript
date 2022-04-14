@@ -1,4 +1,10 @@
-
+function nicknameMap(arrayInputPersons) {
+  let result 
+  result = arrayInputPersons.map((el) => {
+    return (`${el.name}-${el.age}`);
+  });
+    return result;
+}
 const persons = [
   { name: 'Paul', age: 16 },
   { name: 'George', age: 17 },
@@ -12,9 +18,7 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-let nicknames = persons.map((persons) => {
-    return (`${persons.name}-${persons.age}`);
-});
+let nicknames = nicknameMap(persons);
 
 console.log(persons);
 console.log(`------Nicknames------`);
