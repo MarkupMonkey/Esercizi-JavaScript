@@ -1,5 +1,9 @@
-function adultFilter(persons) {
-  return adults;
+function adultFilter(personsArrayInput) {
+    let arrayResult 
+    arrayResult = personsArrayInput.filter(function(el){
+    return el.age >= 18;
+  })
+     return arrayResult;
 }
 
 const persons = [
@@ -15,11 +19,7 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-let adults = persons.filter(function(el){
-  return el.age >= 18;
-})
-
-adults = adultFilter(persons);
+let adults = adultFilter(persons);
 console.log(persons);
 console.log(`------ Only adults ------`);
 console.log(adults);
