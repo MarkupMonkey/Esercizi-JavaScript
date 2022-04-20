@@ -1,6 +1,24 @@
-function uncompletedNotes(notes) {
-  // ...
+function isComplete(list){
+  let comp = true;
+  for(let i=0; i < list.length; i++){
+     if(list[i].done==false) {     
+       comp=false;
+       return comp;
+  }
 }
+  return comp;
+}
+
+function uncompletedNotes(notes) {
+  let unNotes = notes.map((el)=>{return el;}); 
+  
+  for(let i=0; i < notes.length; i++){ //dichiarare la i in ogni funzione
+     if (isComplete(unNotes[i].todos)){
+       unNotes=unNotes.splice(i,1);
+      }
+   }
+   return unNotes;
+ }
 
 const notes = [
   {

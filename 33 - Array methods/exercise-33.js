@@ -1,5 +1,22 @@
+function isComplete(list){
+  let comp = true;
+  for(let i=0; i < list.length; i++){
+     if(list[i].done==false) {     
+       comp=false;
+       return comp;
+  }
+}
+  return comp;
+}
+
 function firstUncompletedNote(notes) {
-  // ...
+  let unNotes = notes.map((el) =>{return el;});
+
+  for(let i= 0; i < notes.length; i++){
+    if (isComplete(unNotes[i].todos)){
+      unNotes = unNotes.splice(i,1);
+    }
+  }
 }
 
 const notes = [
