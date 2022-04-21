@@ -13,8 +13,8 @@ function firstUncompletedNote(notes) {
   let unNotes = notes.map((el) =>{return el;});
 
   for(let i= 0; i < notes.length; i++){
-    if (isComplete(unNotes[i].todos)){
-      unNotes = unNotes.splice(i,1);
+    if (!isComplete(unNotes[i].todos)){
+      return unNotes[i];
     }
   }
 }
