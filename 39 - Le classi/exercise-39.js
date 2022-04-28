@@ -27,7 +27,7 @@ class AreaCalculator {
     } else if (cal === rectangle) {
       return rectangle.height * rectangle.width;
     } else if (cal === circle) {
-      return (circle.radius * 3, 14) * 2;
+      return (circle.radius**2)*3.14;
     }
   }
 }
