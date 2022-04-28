@@ -18,7 +18,18 @@ class Circle {
 }
 
 class AreaCalculator {
-  // ...
+  constructor(poligon) {
+    this.poligon = poligon;
+  }
+  static calculate(cal) {
+    if (cal === square) {
+      return square.side * square.side;
+    } else if (cal === rectangle) {
+      return rectangle.height * rectangle.width;
+    } else if (cal === circle) {
+      return (circle.radius * 3, 14) * 2;
+    }
+  }
 }
 
 const square = new Square(4);
