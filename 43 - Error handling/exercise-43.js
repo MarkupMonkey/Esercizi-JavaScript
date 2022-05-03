@@ -7,7 +7,13 @@ class BankAccount {
 
   deposit(amount) {
     if (amount < 0) {
-      throw new Error('The amount provided cannot be negative'); // Use custom Error class
+      try {
+        throw new NegativeAmountError('The amount provided cannot be negative'); // Use custom Error class
+      }
+      catch (er) {
+        console.log(er.message)
+        amount = 0;
+      }
     }
 
     this.#amount += amount;
@@ -15,13 +21,24 @@ class BankAccount {
 
   withdraw(amount) {
     if (amount < 0) {
-      throw new Error('The amount provided cannot be negative'); // Use custom Error class
+      try {
+        throw new NegativeAmountError('The amount provided cannot be negative'); // Use custom Error class
+      }
+      catch (er) {
+        console.log(er.message)
+        amount = 0;
+      }
     }
 
     if (this.#amount < amount) {
-      throw new Error('You cannot withdraw more than account balance'); // Use custom Error class
+      try {
+        throw new WithdrawNotPermittedError('You cannot withdraw more than account balance'); // Use custom Error class
+      } catch (er) {
+        console.log(er.name)
+        console.log(er.message)
+        amount = 0;
+      }
     }
-
     this.#amount -= amount;
   }
 
@@ -30,29 +47,30 @@ class BankAccount {
   }
 }
 
+
 class NegativeAmountError extends Error {
   constructor(message) {
     super(message)
     this.name = "NegativeAmountError";
+    this.message = message;
   }
 
 }
 
-class withdrawNotPermittedError extends Error {
+class WithdrawNotPermittedError extends Error {
   constructor(message) {
     super(message);
-    this.name = "WhitdrawNotPermittedError";
+    this.name = "WithdrawNotPermittedError";
+    this.message = message;
   }
 }
 
 
 
-try {
-  const bankAccount = new BankAccount(1000);
-  bankAccount.deposit(500);
-  bankAccount.deposit(200);
-  bankAccount.withdraw(10000);
-  bankAccount.view();
-} catch (e) {
-  console.log('Something went wrong during bank account operations: ' + e.message);
-}
+
+
+const bankAccount = new BankAccount(1000);
+bankAccount.deposit(500);
+bankAccount.deposit(200);
+bankAccount.withdraw(10000);
+bankAccount.view()
