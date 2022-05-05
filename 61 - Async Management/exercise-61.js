@@ -44,7 +44,7 @@ function fetchPersonById(id){
       }else{
         reject(new error('Noneee'))
       }
-    }, 1500)
+    }, 1000)
   })
 }
 
@@ -58,12 +58,12 @@ function fetchJobById(id) {
         reject(new Error("Error"))
       }
 
-    }, 1000)
+    }, 500)
   })
 }
 Promise.race([
   fetchPersonById(2),
-  fetchJobById(2)
+  fetchJobById(3)
 ])
 
 .then((param)=> console.log(param))
