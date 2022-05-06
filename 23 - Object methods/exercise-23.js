@@ -3,5 +3,8 @@ const person = {
   lastName: 'Rossi',
   age: 25
 }
-console.log(Object.keys(person));
+
+for (const [key, value] of Object.entries(person)) {
+  console.log(`${key}: ${value}`);
+}
 // Print values of person using Object.keys
