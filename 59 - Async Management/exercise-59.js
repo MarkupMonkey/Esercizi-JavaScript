@@ -25,14 +25,17 @@ function fetchPersonById(id) {
       const person = persons.find(item => item.id === id);
       
       if (person) {
-        return resolve(JSON.stringify(person));
+      resolve(JSON.stringify(person));
       }
 
-      return reject(`Person with id: ${id} doesn't exist`);
+      reject(`Person with id: ${id} doesn't exist`);
     }, 1000);
   });
 }
 
+fetchPersonById(8)
+.then((itemReturned) => console.log(JSON.parse(itemReturned)))
+.catch((errorReturned) => console.log(errorReturned));// core here
 fetchPersonById(1)
-.then((resolve) => console.log(JSON.parse(resolve)))
-.catch((error) => console.log(message.error));// core here
+.then((itemReturned) => console.log(JSON.parse(itemReturned)))
+.catch((errorReturned) => console.log(errorReturned));// core here

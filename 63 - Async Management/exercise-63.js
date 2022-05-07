@@ -22,13 +22,13 @@ const persons = [
 function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const person = persons.find(item => item.id === id);
+      const itemFound = persons.find(item => item.id === id);
 
-      if (person) {
-        return resolve(JSON.stringify(person));
+      if (itemFound) {
+        resolve(JSON.stringify(itemFound));
       }
 
-      return reject(`Person with id: ${id} doesn't exist`);
+      reject(`Person with id: ${id} doesn't exist`);
     }, 1000);
   });
 }
@@ -38,11 +38,11 @@ function fetchPersonById(id) {
 //   .then((person) => console.log(person))
 //   .catch((err) => console.error(err));
 
-async function asyncFetch(){
+async function asyncFetch() {
   const personJson = await fetchPersonById(2);
   const person = await JSON.parse(personJson);
-  console.log(person); 
+  console.log(person);
 }
 
 asyncFetch()
-.catch((error) => console.log(error));
+  .catch((error) => console.log(error));

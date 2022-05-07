@@ -13,7 +13,7 @@ const person1 = {
 // viene modificato il riferimento all'oggetto person1
 console.log(person1)
 console.log(`--- eseguito deep copying ---`)
-let person2 = Object.assign({}, person1);
+let person2 = JSON.parse(JSON.stringify(person1));
 person2.address.region = 'Lombardia';
 person2.address.city = 'Milan';
 console.log(person2);

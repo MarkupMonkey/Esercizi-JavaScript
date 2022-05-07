@@ -39,10 +39,10 @@ const jobs = [
 function fetchPersonById(id){
   return new Promise((resolve,reject)=> {
     setTimeout(()=> {
-      if(persons.find((element)=> element.id === id)){
-        resolve(persons.find((element)=> element.id === id))
+      if(persons.find((person)=> person.id === id)){
+        resolve(persons.find((person)=> person.id === id))
       }else{
-        reject(new error('Noneee'))
+        reject(new error('Person not found'))
       }
     }, 1500)
   })
@@ -55,14 +55,15 @@ function fetchJobById(id) {
       if(jobs.find((element)=> element.id === id)){
         resolve(jobs.find((element) => element.id === id))
       }else{
-        reject(new Error("Error"))
+        reject(new Error("Job not found"))
       }
 
     }, 1000)
   })
 }
 Promise.all([
-  fetchPersonById(1),
-  fetchJobById(2)
-]).then((yep) => console.log(yep))
-  .catch((nope) => console.log(nope));
+  fetchPersonById(2),
+  fetchJobById(1),
+
+]).then((itemReturned) => console.log(itemReturned))
+  .catch((errorReturned) => console.log(errorReturned));

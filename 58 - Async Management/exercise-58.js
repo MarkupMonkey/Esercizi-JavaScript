@@ -31,7 +31,15 @@ function fetchPersonById(id) {
   });
 }
 
-fetchPersonById(4).then((person) => console.log(person)).catch((person) => console.log(person));
-fetchPersonById(1).then((person) => console.log(person)).catch((person) => console.log(person));
-fetchPersonById(3).then((person) => console.log(person)) .catch((person) => console.log(person));
-fetchPersonById(2).then((person) => console.log(person)) .catch((person) => console.log(person));
+fetchPersonById(4)
+.then((person) => console.log(person))
+.catch((person) => console.log(person));
+fetchPersonById(1)
+.then((person) => console.log(person))
+.catch((person) => console.log(person));
+fetchPersonById(3)
+.then((person) => console.log(person)) 
+.catch((person) => console.log(person));
+fetchPersonById(2)
+.then((person) => console.log(person)) 
+.catch((person) => console.log(person));

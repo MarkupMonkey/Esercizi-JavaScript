@@ -20,12 +20,10 @@ const persons = [
 ];
 
 function fetchPersonById(id) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       if (persons.find((persona) => persona.id === id)) {
         resolve(persons.find((persona) => persona.id === id));
-      } else {
-        reject(new Error(`this person is not here `));
       }
     }, 3000);
   });

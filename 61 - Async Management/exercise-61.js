@@ -36,13 +36,13 @@ const jobs = [
 
 // core here
 
-function fetchPersonById(id){
-  return new Promise((resolve,reject)=> {
-    setTimeout(()=> {
-      if(persons.find((element)=> element.id === id)){
-        resolve(persons.find((element)=> element.id === id))
-      }else{
-        reject(new error('Noneee'))
+function fetchPersonById(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (itemFound = persons.find((item) => item.id === id)) {
+        resolve(itemFound)
+      } else {
+        reject(new error("Person not found"))
       }
     }, 1000)
   })
@@ -51,20 +51,19 @@ function fetchPersonById(id){
 
 function fetchJobById(id) {
   return new Promise((resolve, reject) => {
-    setTimeout(()=>{
-      if(jobs.find((element)=> element.id === id)){
-        resolve(jobs.find((element) => element.id === id))
-      }else{
-        reject(new Error("Error"))
+    setTimeout(() => {
+      if (jobFound = jobs.find((item) => item.id === id)) {
+        resolve(jobFound)
+      } else {
+        reject(new Error("Job not found"))
       }
-
     }, 500)
   })
 }
+
 Promise.race([
   fetchPersonById(2),
   fetchJobById(3)
 ])
-
-.then((param)=> console.log(param))
-.catch((param)=> console.log(param));
+  .then((firstItemReturned) => console.log(firstItemReturned))
+  .catch((firstErrorReturned) => console.log(firstErrorReturned));

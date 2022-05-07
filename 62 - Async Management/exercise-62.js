@@ -22,32 +22,42 @@ const persons = [
 function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const person = persons.find(item => item.id === id);
+      const itemFound = persons.find(item => item.id === id);
 
-      if (person) {
-        return resolve(JSON.stringify(person));
+      if (itemFound) {
+        resolve(JSON.stringify(itemFound));
       }
-
-      return reject(`Person with id: ${id} doesn't exist`);
+      let myError = new Error(`Person with id: ${id} doesn't exist`);
+      reject(myError);
     }, 1000);
   });
 }
 
-async function asyncFetch (){
-  const item = await fetchPersonById(2);
-  const item2 = await JSON.parse(item);
-  console.log(item2);
+async function asyncFetch(id) {
+  const item = JSON.parse(await fetchPersonById(id));
+  return item;
 }
 
 
-asyncFetch().catch((error) => console.log(error));
+asyncFetch(1)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(2)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(3)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(4)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
 
 // async function asyncFetch(2) {
 //   let personJson = await fetchPersonById(personJson);
 //   console.log(personJson);
 //   let person = await Promise(person);
 //   console.log(person);
-//   let err = await 
+//   let err = await
 // }
   // .then((personJson) => JSON.parse(personJson))
   // .then((person) => console.log(person))
