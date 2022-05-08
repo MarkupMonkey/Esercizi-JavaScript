@@ -11,12 +11,29 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo" onclick="sendPost()"> Send</button>
       </form>
     </div>
   </body>
 </html>
 
 <script>
-  // code here
+  async function addPost(newPost) {
+    await fetch("https://jsonplaceholder.typicode.com/posts ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;carset=utf-8",
+      },
+      body: JSON.stringify(newPost),
+    }).catch((error) => console.log(error));
+  }
+  function sendPost() {
+    let newPost = {
+      title: document.querySelector("#todo-title").value,
+      check: document.querySelector("#todo-completed").checked,
+    };
+    console.log(newPost);
+    event.preventDefault();
+    addPost(newPost);
+  }
 </script>

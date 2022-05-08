@@ -1,7 +1,7 @@
 <html>
   <body>
     <div id="container">
-      <button type="button" id="fetch-post">
+      <button type="button" id="fetch-post" onclick="fetchPost()">
         Fetch Post from LocalStorage
       </button>
 
@@ -11,5 +11,8 @@
 </html>
 
 <script>
-  // code here
+function fetchPost(){
+  document.getElementById("post-title")
+  .innerText = localStorage.getItem("post-body"); // code here
+}  
 </script>

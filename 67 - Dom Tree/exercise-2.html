@@ -1,9 +1,28 @@
 <html>
   <body>
-    <div id="container" style="display: flex; align-items: center;"></div>
+    <div id="container" style="display: flex; align-items: center"></div>
   </body>
 </html>
 
 <script>
-  // code here
+  let fetchedTitle = " ";
+  window.addEventListener("load", async () => {
+    await fetch("https://jsonplaceholder.typicode.com/todos/4")
+      .then((response) => response.json())
+      .then((data) => {
+        fetchedTitle = data.title;
+        console.log(fetchedTitle);
+      })
+      .catch((error) => console.log(error));
+
+
+  let myH2 = document.createElement("h2");
+  myH2.innerHTML = fetchedTitle
+  let myCheckbox = document.createElement("input");
+  myCheckbox.type = "checkbox"
+  myCheckbox.setAttribute("checked", true)
+  console.log(myH2)
+  document.getElementById("container").appendChild(myH2).appendChild(myCheckbox)
+
+ })
 </script>

@@ -3,12 +3,44 @@
     <div id="container">
       <h2>Person's Form</h2>
       <form id="person-form">
-        <button type="submit">Submit</button>
       </form>
+
+      <button type="submit" onclick="submitPersonForm()">Submit</button>
     </div>
   </body>
 </html>
 
 <script>
-  // Code here
+  let createForm = document.querySelector("#person-form");
+  let btnSubmit = document.querySelector("#submit");
+
+  function submitPersonForm(){
+    event.preventDefault()
+    let person={'firstName':'', 'lastName':'', 'age':''}
+    person.firstName=document.querySelector('#person-form').querySelector('#firstName').value
+    person.lastName=document.querySelector('#person-form').querySelector('#lastName').value
+    person.age=document.querySelector('#person-form').querySelector('#age').value
+    console.log(person)
+  }
+
+  function initForm(){
+    let myForm=document.querySelector('#person-form')
+    let myInput=document.createElement('input')
+    myInput.type='TEXT';
+    myInput.id='firstName';
+    myInput.value='First Name';
+    myForm.appendChild(myInput);
+    let myInput2=document.createElement('input')
+    myInput2.type='TEXT';
+    myInput2.id='lastName';
+    myInput2.value='Last Name';
+    myForm.appendChild(myInput2);
+    let myInput3=document.createElement('input')
+    myInput3.type='NUMBER';
+    myInput3.id='age';
+    myInput3.value='25';
+    myForm.appendChild(myInput3);
+  }
+
+  window.addEventListener("load", initForm());
 </script>
