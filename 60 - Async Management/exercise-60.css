@@ -1,0 +1,51 @@
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+  
+}
+h1{
+    align-self: center;
+    font-size: 5rem;
+    color: #00ff00;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(19, 4, 32);
+    height: 100vh;
+}
+div{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+}
+.buttonHome,.buttonBack,.buttonNext{width: 50rem; height: 10rem; }
+
+.buttonBack{border-radius: 150rem 100rem  80rem 10rem ;}
+.buttonNext{border-radius: 100rem 150rem  10rem 80rem;}
+a{
+    text-decoration: none;
+    color: #00ff0063;
+    font-size: 8rem
+}
+button{
+    background-color: rgba(19, 4, 32, 0.438);
+    font-size: 2rem;
+    border-radius: 5rem;
+    border:5px solid #00ff0073;
+    width: 40rem;
+    height: 5rem;
+    
+
+}
+
+button:hover{
+    background-color: #00ff0073;
+    transition: 0.5s;
+    box-shadow: 5px 1px 5px 1px #00ff00;
+}

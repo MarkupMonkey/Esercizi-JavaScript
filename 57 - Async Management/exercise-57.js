@@ -22,8 +22,9 @@ const persons = [
 function fetchPersonById(id) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      if (persons.find((persona) => persona.id === id)) {
-        resolve(persons.find((persona) => persona.id === id));
+      const person = persons.find((persona) => persona.id === id)
+      if (person) {
+        resolve(person);
       }
     }, 3000);
   });
@@ -32,14 +33,14 @@ function fetchPersonById(id) {
 
 // code here
 fetchPersonById(2)
-  .then((yes) => console.log(yes))
-  .catch((no) => console.log(no));
+  .then((itemReturned) => console.log(itemReturned))
+  .catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(5)
-  .then((yes) => console.log(yes))
-  .catch((no) => console.log(no));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(1)
-  .then((yes) => console.log(yes))
-  .catch((no) => console.log(no));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(3)
-  .then((yes) => console.log(yes))
-  .catch((no) => console.log(no));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));

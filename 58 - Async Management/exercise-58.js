@@ -22,8 +22,9 @@ const persons = [
 function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (persons.find((persona) => persona.id === id)) {
-        resolve(persons.find(item => item.id === id));
+      const person = (persons.find(item => item.id === id))
+      if (person) {
+        resolve(person);
       } else {
         reject(new Error(`questa persona non c'è`));
       }
@@ -32,14 +33,14 @@ function fetchPersonById(id) {
 }
 
 fetchPersonById(4)
-.then((person) => console.log(person))
-.catch((person) => console.log(person));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(1)
-.then((person) => console.log(person))
-.catch((person) => console.log(person));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(3)
-.then((person) => console.log(person)) 
-.catch((person) => console.log(person));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
 fetchPersonById(2)
-.then((person) => console.log(person)) 
-.catch((person) => console.log(person));
+.then((itemReturned) => console.log(itemReturned))
+.catch((errorReturned) => console.log(errorReturned));
