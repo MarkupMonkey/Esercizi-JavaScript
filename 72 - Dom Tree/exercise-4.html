@@ -20,20 +20,19 @@
 </html>
 
 <script>
-  let person={'firsName':'', 'lastName':'', 'age':''}
-  let form=document.querySelector('form')
-  for(let i=0;i<form.children.length;i++){
-    let id=form.children[i].querySelector('input').id
-    let value=form.children[i].querySelector('input').value
-    if(id==='firstName')
-      person.firsName= value;
-    else if(id==='lastName')
-      person.lastName= value;
-    else if(id==='age')
-      person.age= value;
+  let person = { firsName: "", lastName: "", age: "" };
+  let form = document.querySelector("form");
+  for (let i = 0; i < form.children.length; i++) {
+    let id = form.children[i].querySelector("input").id;
+    let value = form.children[i].querySelector("input").value;
+    if (id === "firstName") person.firsName = value;
+    else if (id === "lastName") person.lastName = value;
+    else if (id === "age") person.age = value;
   }
 
-  document.querySelector('form').setAttribute("data-person", JSON.stringify(person))
+  document
+    .querySelector("form")
+    .setAttribute("data-person", JSON.stringify(person));
 
-  console.log(person)
+  console.log(person);
 </script>
