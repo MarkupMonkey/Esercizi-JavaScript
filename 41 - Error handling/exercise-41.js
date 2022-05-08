@@ -19,12 +19,9 @@ class BankAccount {
       if (amount <= this.#amount) {
         this.#amount -= amount;
       } else {
-        throw new Error(' ERRORE ');// throw an exception if amount is negative or if withdrawal amount is greater than current amount
+        throw new Error('error: negative amount');
       }
-    } else {
-      throw new Error('error: negative amount');
     }
-
   }
 
   view() {
