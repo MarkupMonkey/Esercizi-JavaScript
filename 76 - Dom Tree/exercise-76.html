@@ -14,5 +14,12 @@
 </html>
 
 <script>
-  // code here
+  heroList = document.querySelector(".hero-list");
+  heroList.addEventListener("mouseover", function (event) {
+    event.target.style.backgroundColor = "red";
+  });
+
+  heroList.addEventListener("mouseout", function (event) {
+    event.target.style.backgroundColor = "";
+  });
 </script>

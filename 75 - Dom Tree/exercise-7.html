@@ -47,7 +47,7 @@
 
     console.log(person);
   }
-
+  let event = new CustomEvent("personFormLoaded");
   function initForm() {
     const firstNameInput = generateFormInputField(
       "type",
@@ -69,7 +69,12 @@
     form.prepend(firstNameInput);
 
     form.addEventListener("submit", submitPersonForm);
+    form.dispatchEvent(event);
   }
 
   window.addEventListener("DOMContentLoaded", initForm);
+  window.addEventListener(
+    "personFormLoaded",
+    console.log("Person Form Loaded")
+  );
 </script>
