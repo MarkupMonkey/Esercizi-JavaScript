@@ -11,7 +11,9 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo" onclick="sendPost()"> Send</button>
+        <button type="submit" id="submit-todo" onclick="sendPost()">
+          Send
+        </button>
       </form>
     </div>
   </body>
@@ -35,5 +37,6 @@
     console.log(newPost);
     event.preventDefault();
     addPost(newPost);
+    document.querySelector("form").reset();
   }
 </script>
