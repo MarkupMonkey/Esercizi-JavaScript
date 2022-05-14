@@ -4,15 +4,14 @@
       <h2>Person's Form</h2>
       <form id="person-form"></form>
 
-      <button type="submit" onclick="submitPersonForm()">Submit</button>
+      <button type="submit">Submit</button>
     </div>
   </body>
 </html>
 
 <script>
   let createForm = document.querySelector("#person-form");
-  let btnSubmit = document.querySelector("#submit");
-
+  document.querySelector("button").addEventListener("click", submitPersonForm);
   function submitPersonForm() {
     event.preventDefault();
     let person = { firstName: "", lastName: "", age: "" };

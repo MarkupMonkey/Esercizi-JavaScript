@@ -14,17 +14,17 @@
 <script>
   // const fetch = required('node-fetch');
 
-  let fetchedPost = "";
+  let fetchedPost;
   function asyncFetchPost() {
     const response = fetch("https://jsonplaceholder.typicode.com/posts/1")
       .then((response) => response.json())
-      .then((data) => (fetchedPost = data.body))
+      .then((data) => (fetchedPost = JSON.stringify(data)))
       .catch((error) => console.log(error));
     console.log(fetchedPost);
   }
 
   function SavePost() {
-    localStorage.setItem("post-body", fetchedPost);
+    localStorage.setItem("post", fetchedPost);
   }
   // code here
 </script>

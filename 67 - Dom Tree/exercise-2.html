@@ -6,12 +6,15 @@
 
 <script>
   let fetchedTitle = " ";
+  let fetchedCheck;
   window.addEventListener("load", async () => {
     await fetch("https://jsonplaceholder.typicode.com/todos/4")
       .then((response) => response.json())
       .then((data) => {
         fetchedTitle = data.title;
+        fetchedCheck = data.completed;
         console.log(fetchedTitle);
+        console.log(fetchedCheck);
       })
       .catch((error) => console.log(error));
 
@@ -20,9 +23,12 @@
   myH2.innerHTML = fetchedTitle
   let myCheckbox = document.createElement("input");
   myCheckbox.type = "checkbox"
-  myCheckbox.setAttribute("checked", true)
+  if (fetchedCheck)
+  myCheckbox.toggleAttribute("checked")
   console.log(myH2)
-  document.getElementById("container").appendChild(myH2).appendChild(myCheckbox)
+  document.getElementById("container")
+  .appendChild(myH2)
+  .appendChild(myCheckbox)
 
  })
 </script>

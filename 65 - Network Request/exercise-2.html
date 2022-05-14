@@ -12,7 +12,9 @@
 
 <script>
 function fetchPost(){
+  let localPost = JSON.parse(localStorage.getItem("post"));
   document.getElementById("post-title")
-  .innerText = localStorage.getItem("post-body"); // code here
+  .innerText = localPost.title;
+  console.log(localPost) // code here
 }  
 </script>

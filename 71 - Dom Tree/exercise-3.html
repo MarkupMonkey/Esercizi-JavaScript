@@ -20,11 +20,17 @@
 </html>
 
 <script>
-  let form = document.querySelector("form");
-  let allInput = form.children
-  console.log(allInput)
-  
-  for(let i=0; i< allInput.length; i++){
-    console.log(allInput[i].querySelector('label').innerHTML + " " +allInput[i].querySelector('input').value)
-  }
+  console.log(
+    document.querySelector("#firstName").parentElement.querySelector("label").innerHTML +
+      " " +
+      document.querySelector("#firstName").value +
+      "\n" +
+      document.querySelector("#lastName").parentElement.querySelector("label").innerHTML +
+      " " +
+      document.querySelector("#lastName").value +
+      "\n" +
+      document.querySelector("#age").parentElement.querySelector("label").innerHTML +
+      " " +
+      document.querySelector("#age").value
+  );
 </script>
