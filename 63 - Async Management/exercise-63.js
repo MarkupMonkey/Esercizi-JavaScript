@@ -27,8 +27,8 @@ function fetchPersonById(id) {
       if (itemFound) {
         resolve(JSON.stringify(itemFound));
       }
-
-      reject(`Person with id: ${id} doesn't exist`);
+      let myError = new Error(`Person with id: ${id} doesn't exist`);
+      reject(myError);
     }, 1000);
   });
 }
@@ -38,11 +38,22 @@ function fetchPersonById(id) {
 //   .then((person) => console.log(person))
 //   .catch((err) => console.error(err));
 
-async function asyncFetch() {
-  const personJson = await fetchPersonById(2);
-  const person = await JSON.parse(personJson);
-  console.log(person);
+
+async function asyncFetch(id) {
+  const item = JSON.parse(await fetchPersonById(id));
+  return item;
 }
 
-asyncFetch()
-  .catch((error) => console.log(error));
+
+asyncFetch(1)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(2)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(3)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
+asyncFetch(4)
+  .then(itemReturned => console.log(itemReturned))
+  .catch(errorReturned => console.log(errorReturned))
