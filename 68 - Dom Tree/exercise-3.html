@@ -11,7 +11,7 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo" onclick="sendPost()">
+        <button type="submit" id="submit-todo">
           Send
         </button>
       </form>
@@ -20,23 +20,48 @@
 </html>
 
 <script>
-  async function addPost(newPost) {
-    await fetch("https://jsonplaceholder.typicode.com/posts ", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;carset=utf-8",
-      },
-      body: JSON.stringify(newPost),
-    }).catch((error) => console.log(error));
-  }
-  function sendPost() {
-    let newPost = {
-      title: document.querySelector("#todo-title").value,
-      check: document.querySelector("#todo-completed").checked,
-    };
-    console.log(newPost);
-    event.preventDefault();
-    addPost(newPost);
-    document.querySelector("form").reset();
-  }
+
+ let form = document.querySelector('form')
+ form.addEventListener('submit', async (event)=> {
+   event.preventDefault();
+   const data = {
+     title : event.target[0].value,
+     completed : evetnt.target[1].checked,
+   }
+   const postData = await fetch(" https://jsonplaceholder.typicode.com/posts",{
+     method : 'POST',
+     headers: {"content-type": "application/json",},
+     body : JSON.stringify(data)
+   })
+   const response = await postData.json()
+   console.log(response);
+ })
+  // code here
+  // let button = document
+  //   .querySelector("#submit-todo")
+  //   .addEventListener("click", (event) => {
+  //     event.preventDefault();
+
+  //     sendPost();
+  //   });
+
+  // async function sendPost() {
+  //   await fetch(" https://jsonplaceholder.typicode.com/posts", {
+  //     method: "post",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+
+  //     body: JSON.stringify({
+  //       title: document.getElementById("todo-title").value,
+  //       completed: document.getElementById("todo-completed").checked,
+  //     }),
+  //   })
+  //     .then((param) => {
+  //       return param.json();
+  //     })
+  //     .then((json) => {
+  //       console.log(json);
+  //     });
+//  }
 </script>

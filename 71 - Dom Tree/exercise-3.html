@@ -20,17 +20,22 @@
 </html>
 
 <script>
-  console.log(
-    document.querySelector("#firstName").parentElement.querySelector("label").innerHTML +
-      " " +
-      document.querySelector("#firstName").value +
-      "\n" +
-      document.querySelector("#lastName").parentElement.querySelector("label").innerHTML +
-      " " +
-      document.querySelector("#lastName").value +
-      "\n" +
-      document.querySelector("#age").parentElement.querySelector("label").innerHTML +
-      " " +
-      document.querySelector("#age").value
-  );
+  // console.log(
+  //   document.querySelector("#firstName").parentElement.querySelector("label").innerHTML +
+  //     " " +
+  //     document.querySelector("#firstName").value +
+  //     "\n" +
+  //     document.querySelector("#lastName").parentElement.querySelector("label").innerHTML +
+  //     " " +
+  //     document.querySelector("#lastName").value +
+  //     "\n" +
+  //     document.querySelector("#age").parentElement.querySelector("label").innerHTML +
+  //     " " +
+  //     document.querySelector("#age").value
+  // );
+  
+  const labels = document.querySelectorAll('label')
+  const inputs = document.querySelectorAll('input')
+  labels.forEach((element, i) => console.log(labels[i].outerText + inputs[i].value)) 
 </script>
+
